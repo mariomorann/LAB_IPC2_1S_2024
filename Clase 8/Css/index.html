@@ -1,0 +1,39 @@
+<style>
+    .padre {
+        height: 200px;
+        border: 5px solid red;
+
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+    }
+
+    .padre div:nth-child(1) {
+        border: 3px solid orange;
+        height: fit-content;
+        flex: 0;
+    }
+
+    div {
+        border: 3px solid blue;
+        height: fit-content;
+        flex: 1;
+    }
+
+</style>
+<body>
+    <div class="padre">
+        <div>
+            div 1 
+        </div>
+        <div>
+            div 2 
+        </div>
+        <div>
+            div 3
+        </div>
+        <div>
+            div 4
+        </div>
+    </div>
+</body>
