@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo 5</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/styles/index.css')}}">
+    </head>
+    <body>
+        <main class="main">
+            <div class="form">
+                <h1>Formulario para clientes</h1>
+                {% block nav %}
+                <a href="{{url_for('server.viewClients')}}">Lista de Clientes</a>
+                {% endblock nav %}
+                <form id="formulario" class="formulario" action="/" method="post" enctype='application/json'>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido">
+
+                    <label for="carnet">Carnet:</label>
+                    <input type="text" id="carnet" name="carnet">
+
+                    <button class="btn-crear" type="submit" onclick="">
+                        Crear Cliente
+                    </button>
+                </form>
+            </div>
+        </main>
+        <script>
+            document.getElementById('formulario').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(this);
+                const jsonData = {}; // Convertir los datos a un objeto JSON
+                    formData.forEach((value, key) => {
+                    jsonData[key] = value;
+                });
+
+                fetch('http://localhost:5000/clientes/post', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonData) // Convertir los datos a JSON
+                })
+
+                alert('Se agregó correctamente')
+            })
+        </script>
+    </body>
+</html>

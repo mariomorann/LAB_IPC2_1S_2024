@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo 5</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/styles/index.css')}}">
+    </head>
+    <body>
+        <main class="main">
+            <div class="form">
+                <h1>Lista de clientes</h1>
+                {% block nav %}
+                <a href="{{url_for('server.index')}}">Inicio</a>
+                {% endblock nav %}
+                <div>
+                    {% for cliente in listaClientes %}
+                        <div class="cliente">
+                            <span> Nombre: <strong> {{cliente.nombre}} </strong> </span>
+                            <span> Apellido: <strong> {{cliente.apellido}} </strong> </span>
+                            <span> Carnet: <strong> {{cliente.carnet}} </strong> </span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

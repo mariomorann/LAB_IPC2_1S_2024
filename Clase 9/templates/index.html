@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo 9</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+    </head>
+    <body>
+        <main class="main">
+            <div class="container">
+                <h2>Formulario de Clientes</h2>
+                {% block nav %}
+                <a href="/verClientes"> Lista de Clientes </a>
+                {% endblock nav %}
+                <form id="formulario" class="formulario" action="/">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido">
+
+                    <label for="carnet">Carnet:</label>
+                    <input type="text" id="carnet" name="carnet">
+
+                    <button type="submit" class="btn-crear">Crear Cliente</button>
+                </form>
+            </div>
+        </main>
+        <script>
+            document.getElementById('formulario').addEventListener('submit', function(event) {
+                event.preventDefault()
+
+                const formData = new FormData(this);
+                const jsonData = {}; // Convertir los datos a un objeto JSON
+                formData.forEach((value, key) => {
+                    jsonData[key] = value;
+                });
+
+                fetch('http://localhost:5000/createCliente', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonData)
+                })
+                
+                alert("El cliente se guardó con éxito.")
+            })
+        </script>
+    </body>
+</html>
