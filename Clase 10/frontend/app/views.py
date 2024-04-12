@@ -1,12 +1,23 @@
 from django.shortcuts import render, HttpResponse
-# Create your views here.
+
+import requests
+
+xml = ""
 
 def index(request):
-    return render(request, "index.html")
+    global xml
+    xml = request.GET.get("xml")
+    print(xml)
+    context = {"xml": xml}
+    return render(request, "index.html", context)
 
 
 def about(request):
-    return render(request, "about.html")
+    global xml
+    response = requests.get("http://localhost:5000/clientes/get")
+    print(response.text)
+    context = {"xml": response.text}
+    return render(request, "about.html", context)
 
 
 def contact(request):

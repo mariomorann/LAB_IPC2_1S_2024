@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<clientes>
+
+    <cliente>
+        <nombre> Andres </nombre>
+        <apellido> Rosales </apellido>
+        <edad> 18 </edad>
+    </cliente>
+
+    <cliente>
+        <nombre> Jose </nombre>
+        <apellido> Rodriguez </apellido>
+        <edad> 25 </edad>
+    </cliente>
+
+    <cliente>
+        <nombre> Joselyn </nombre>
+        <apellido> Flores </apellido>
+        <edad> 27 </edad>
+    </cliente>
+
+</clientes>

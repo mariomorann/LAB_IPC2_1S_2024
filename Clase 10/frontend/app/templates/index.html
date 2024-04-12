@@ -1,4 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <h1 class="h1-index">Hola mundo</h1>
+<form action="" method="GET">
+    <label>
+        Entrada XML
+    </label>
+    <textarea name="xml" id="xml" cols="30" rows="10" value={{xml}}></textarea>
+    <button type="submit"> Enviar </button>
+</form>
 {% endblock %}

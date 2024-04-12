@@ -1,5 +1,5 @@
 """
-URL configuration for ejemplo7_django project.
+URL configuration for frontend project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -15,8 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+
+from app import views
 
 urlpatterns = [
-    path('home', include('home.urls'))
+    path('carga', views.carga_xml),
+    path('clientes', views.lista_clientes),
 ]

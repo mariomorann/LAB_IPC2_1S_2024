@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+        <title> Carga de Información </title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/carga">Cargar Clientes</a>
+                </li>
+                <li>
+                    <a href="/clientes">Lista Clientes</a>
+                </li>
+            </ul>
+        </nav>
+        {% block content %} {% endblock %}
+    </body>
+</html>
