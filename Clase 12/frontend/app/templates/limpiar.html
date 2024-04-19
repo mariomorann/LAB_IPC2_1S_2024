@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .container-limpiar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-limpiar {
+        width: 150px;
+    }
+
+    .label-limpiar {
+        margin-top: 25px;
+    }
+</style>
+<h1 class="h1-index">Limpiar</h1>
+<div class="container-limpiar">
+    <label class="label-limpiar"> <strong> {{response}} </strong> </label>
+</div>
+
+{% endblock %}

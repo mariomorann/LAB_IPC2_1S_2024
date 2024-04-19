@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .container-about {
+        width: 500px;
+
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    textarea {
+        width: 500px;
+    }
+    
+    .btn-submit {
+        flex: 0;
+    }
+</style>
+<h1 class="h1-about">Respuesta</h1>
+<div class="container-about">
+    <div>
+        <p>Entrada</p>
+        <textarea name="xml" id="xml" cols="30" rows="10">{{ respuesta }}</textarea>
+    </div>
+</div>
+{% endblock %}

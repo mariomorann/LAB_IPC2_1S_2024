@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .textarea-respuesta {
+        width: 600px;
+    }
+</style>
+<h1 class="h1-about">XML de Respuesta</h1>
+<div>
+    <textarea class="textarea-respuesta" name="respuestaXml" id="respuestaXml" cols="30" rows="20" disabled>{{xml}}</textarea>
+</div>
+{% endblock %}

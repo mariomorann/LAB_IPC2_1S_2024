@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .container-clientes {
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+        gap: 35px;
+
+        margin-top: 75px;
+        margin-bottom: 75px;
+        padding-left: 75px;
+        padding-right: 75px;
+
+    }
+
+    .item {
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: aliceblue;
+        width: 250px;
+        padding: 30px;
+    }
+</style>
+<h1 class="h1-contact">Lista de Clientes</h1>
+<div class="container-clientes">
+    {% for cliente in clientes %}
+        <div class="item">
+            <span>Nombre: <strong>{{cliente.nombre}}</strong></span>
+            <span>Apellido: <strong>{{cliente.apellido}}</strong></span>
+            <span>Edad: <strong>{{cliente.edad}}</strong></span>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

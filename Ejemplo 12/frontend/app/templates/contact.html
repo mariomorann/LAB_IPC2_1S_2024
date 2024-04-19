@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .container-contact {
+        display: flex;
+        justify-content: start;
+        padding-left: 75px;
+        padding-right: 75px;
+        gap: 35px;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+
+        width: 250px;
+        padding: 30px;
+
+        border: 1px solid black;
+        border-radius: 5px;
+
+        background-color: white;
+        
+    }
+</style>
+<h1 class="h1-contact">Lista Clientes</h1>
+<div class="container-contact">
+    {% for cliente in respuesta %}
+        <div class="item">
+            <span>Nombre: <strong> {{cliente.nombre}} </strong></span>
+            <span>Nombre: <strong> {{cliente.apellido}} </strong></span>
+            <span>Nombre: <strong> {{cliente.edad}} </strong></span>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

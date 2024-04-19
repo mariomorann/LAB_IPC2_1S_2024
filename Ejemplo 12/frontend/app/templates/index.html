@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .container-index {
+        width: 500px;
+
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    textarea {
+        width: 500px;
+    }
+    
+    .btn-submit {
+        flex: 0;
+    }
+</style>
+<h1 class="h1-index">Hola mundo</h1>
+<form action="" method="GET">
+    <div class="container-index">
+        <input type="file" id="xmlInput" accept=".xml">
+        <div>
+            <p>Entrada</p>
+            <textarea name="xml" id="xml" cols="30" rows="10" value={{xml}}></textarea>
+        </div>
+        
+        <button type="submit"> Enviar </button>
+    </div>
+</form>
+<script>
+    function leerArchivo(e) {
+        var archivo = e.target.files[0];
+        if (!archivo) {
+            return;
+        }
+        var lector = new FileReader();
+        lector.onload = function (e) {
+            var contenido = e.target.result;
+            document.getElementById('xml').value = contenido;
+        };
+        lector.readAsText(archivo);
+        document.getElementById('xml').value =  lector.readAsText(archivo);
+    }
+    
+    document.getElementById('xmlInput').addEventListener('change', leerArchivo, false);
+</script>
+{% endblock %}

@@ -1,0 +1,12 @@
+python -m venv venv
+
+pip install django --user
+
+python -m django --version
+
+python -m django startproject appname
+django-admin startproject mysite
+
+python manage.py runserver
+
+python manage.py startapp app
